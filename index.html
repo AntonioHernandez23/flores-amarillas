@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flores Amarillas 🌻 — Por nuestra amistad</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    min-height: 100vh;
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(160deg, #fff8dc 0%, #ffec99 45%, #ffd54f 100%);
+    overflow-x: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 24px;
+  }
+
+  /* Pétalos cayendo */
+  .petal {
+    position: fixed;
+    top: -40px;
+    font-size: 22px;
+    animation: fall linear infinite;
+    opacity: .85;
+    pointer-events: none;
+    z-index: 1;
+    filter: drop-shadow(0 2px 2px rgba(180,140,0,.25));
+  }
+  @keyframes fall {
+    0%   { transform: translateY(-5vh) rotate(0deg) translateX(0); }
+    50%  { transform: translateY(50vh) rotate(180deg) translateX(30px); }
+    100% { transform: translateY(105vh) rotate(360deg) translateX(-20px); }
+  }
+
+  .card {
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, .82);
+    backdrop-filter: blur(6px);
+    border-radius: 28px;
+    box-shadow: 0 18px 50px rgba(230, 180, 0, .35), 0 0 0 6px rgba(255, 213, 79, .35);
+    max-width: 640px;
+    width: 100%;
+    padding: clamp(28px, 5vw, 52px);
+    text-align: center;
+    animation: rise 1.2s ease-out;
+  }
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(40px) scale(.96); }
+    to   { opacity: 1; transform: none; }
+  }
+
+  .bouquet {
+    font-size: clamp(48px, 12vw, 84px);
+    line-height: 1.1;
+    animation: sway 3.5s ease-in-out infinite;
+  }
+  @keyframes sway {
+    0%, 100% { transform: rotate(-3deg); }
+    50%      { transform: rotate(3deg); }
+  }
+
+  h1 {
+    margin: 18px 0 6px;
+    font-size: clamp(1.6rem, 5vw, 2.5rem);
+    color: #8a6d00;
+    text-shadow: 0 1px 0 #fff;
+  }
+
+  .subtitle {
+    font-size: clamp(1rem, 3vw, 1.25rem);
+    color: #a07f10;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+
+  p.message {
+    font-size: clamp(1.02rem, 2.6vw, 1.2rem);
+    color: #5c4a00;
+    line-height: 1.75;
+    margin-bottom: 14px;
+  }
+
+  .friendship {
+    margin-top: 22px;
+    padding: 16px 18px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #fff3b0, #ffe082);
+    color: #7a5f00;
+    font-weight: 600;
+    font-size: clamp(.95rem, 2.4vw, 1.1rem);
+  }
+
+  .signature {
+    margin-top: 22px;
+    font-style: italic;
+    color: #9c7c12;
+    font-size: .95rem;
+  }
+
+  footer {
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    color: #a08400;
+    font-size: .8rem;
+    z-index: 2;
+  }
+
+  /* Girasoles decorativos en las esquinas */
+  .corner {
+    position: fixed;
+    font-size: clamp(44px, 9vw, 88px);
+    z-index: 0;
+    opacity: .5;
+    user-select: none;
+  }
+  .c1 { top: 8px; left: 10px; transform: rotate(-15deg); }
+  .c2 { top: 8px; right: 10px; transform: rotate(15deg); }
+  .c3 { bottom: 30px; left: 10px; transform: rotate(10deg); }
+  .c4 { bottom: 30px; right: 10px; transform: rotate(-10deg); }
+
+  button.bloom {
+    margin-top: 20px;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #ffca28, #ffb300);
+    color: #5d4700;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(255, 179, 0, .45);
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  button.bloom:hover { transform: translateY(-2px) scale(1.03); box-shadow: 0 10px 24px rgba(255, 179, 0, .55); }
+  button.bloom:active { transform: scale(.97); }
+</style>
+</head>
+<body>
+
+  <div class="corner c1">🌻</div>
+  <div class="corner c2">🌼</div>
+  <div class="corner c3">🌼</div>
+  <div class="corner c4">🌻</div>
+
+  <main class="card">
+    <div class="bouquet">🌻🌼🌻</div>
+    <h1>¡Un excelente mes y un año increíble!</h1>
+    <div class="subtitle">Flores amarillas para ti</div>
+    <p class="message">
+      Que este nuevo mes te traiga luz, sonrisas y momentos bonitos,
+      y que este año esté lleno de logros, salud y cosas buenas.
+    </p>
+    <p class="message">
+      Te regalo estas flores amarillas como símbolo de alegría,
+      porque así es la amistad que me das: pura luz en los días grises.
+    </p>
+    <div class="friendship">
+      🌻 Por nuestra amistad: gracias por estar siempre. 🌻
+    </div>
+    <button class="bloom" onclick="bloom()">¡Haz florecer más! 🌼</button>
+    <div class="signature">Con cariño, de tu amigo/a 💛</div>
+  </main>
+
+  <footer>Hecho con cariño · funciona en cualquier dispositivo 💛</footer>
+
+<script>
+  const FLOWERS = ['🌻','🌼','🌸','💛','🏵️'];
+
+  function spawnPetal() {
+    const el = document.createElement('div');
+    el.className = 'petal';
+    el.textContent = FLOWERS[Math.floor(Math.random() * FLOWERS.length)];
+    el.style.left = Math.random() * 100 + 'vw';
+    el.style.fontSize = (14 + Math.random() * 22) + 'px';
+    el.style.animationDuration = (6 + Math.random() * 8) + 's';
+    el.style.animationDelay = '0s';
+    document.body.appendChild(el);
+    el.addEventListener('animationend', () => el.remove());
+  }
+
+  // Lluvia constante de flores
+  setInterval(spawnPetal, 450);
+  for (let i = 0; i < 12; i++) setTimeout(spawnPetal, i * 250);
+
+  // Ráfaga al presionar el botón
+  function bloom() {
+    for (let i = 0; i < 25; i++) setTimeout(spawnPetal, i * 60);
+  }
+</script>
+</body>
+</html>
